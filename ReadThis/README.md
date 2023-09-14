@@ -67,17 +67,20 @@ Assicurati di definire il main del ConfigServer con @EnableConfigServer
 
 questa è la dipendenza necessaria per l'utilizzo del config server
 
-Log Distribuito
+Zipkin
 -
-Possiamo tenere traccia dei percorsi che vengono effettuati da una chiamata API all'interno del nostro applicativo tramite dei Sistemi di tracing. Per esempio Zipkin è un sistema distribuito open source che fornisce meccanismi per inviare, ricevere, archiviare e visualizzare i dettagli delle trace e relative span.
+Possiamo tenere traccia delle metriche delle chiamate API all'interno del nostro applicativo tramite dei Sistemi di tracing. Per esempio Zipkin è un sistema distribuito open source che fornisce meccanismi per inviare, ricevere, archiviare e visualizzare i dettagli delle trace e relative span.
 Per utilizzarlo possiamo andare qui: https://hub.docker.com/r/openzipkin/zipkin e ci presenta 2 opzioni:
 
 ![img_14.png](img_14.png)
 inserire questi comandi per creare un jar file per avviare un server zipkin
 
 ![img_15.png](img_15.png)
-Se hai installato docker puoi avviarlo tramite docker con questo comando. In questo caso il server sara esposto sulla porta 9411 e andando sull'url localhost:9411 avrai la pagina con le attività.
+In alternativa se hai installato docker puoi avviarlo tramite docker con questo comando. In questo caso il server sara esposto sulla porta 9411 e andando sull'url localhost:9411 avrai la pagina con le attività.
 Per sancire quali servizi devono essere tracciati devi aggiungere le seguenti dependecy all'interno del servizio interessato. Nel caso dell'esempio io le inserirò dentro department-service
+Un'immagine Docker è un modello in sola lettura che definisce il container. L'immagine contiene il codice che verrà eseguito, incluse le definizioni per librerie e dipendenze necessarie. Un container Docker è un'immagine Docker in esecuzione.
+Se esegui il comando mostrato precedentemente docker crea un immagine relativa al zipkin.
+
 
 ![img_17.png](img_17.png)
 
@@ -86,7 +89,27 @@ Di default non verranno intercettate tutte le statistiche quindi per massimizzar
 ![img_18.png](img_18.png)
 
 
+Circuit Breaker:
+-
 
--Circuit Breaker  
--Hysterix Dashboard  
--API Gateway
+Definizione: Un Circuit Breaker è un pattern di progettazione che previene la continua esecuzione di operazioni che potrebbero non avere successo, aiutando a gestire errori e rallentamenti in un sistema distribuito. Quando il circuito si apre, le chiamate vengono interrotte temporaneamente, evitando sovraccarichi.
+
+
+Hystrix Dashboard:
+-
+Definizione: L'Hystrix Dashboard è un'interfaccia utente web che fornisce una visualizzazione in tempo reale delle metriche e dello stato dei circuiti Hystrix all'interno di un'applicazione a microservizi. Aiuta a monitorare e gestire la resilienza delle chiamate tra servizi.
+
+
+API Gateway:
+-
+Definizione: Un API Gateway è un componente che funge da punto di ingresso principale per le richieste in un'architettura a microservizi. Agisce come un intermediario tra i client e i servizi dietro di esso, gestendo l'instradamento delle richieste, l'autenticazione, l'autorizzazione e altro ancora.
+
+
+Zipkin:
+-
+Definizione: Zipkin è un sistema di tracciamento distribuito utilizzato per monitorare e analizzare il flusso delle richieste attraverso i servizi in un'architettura a microservizi. Fornisce visibilità sulle prestazioni e aiuta a individuare problemi di latenza e errori nelle chiamate tra servizi.
+
+
+Log Distribuito:
+-
+Definizione: Un Log Distribuito è un sistema che raccoglie, archivia e analizza i log generati da diverse componenti di un'applicazione distribuita. Aiuta a monitorare, diagnosticare problemi e analizzare il comportamento di un'applicazione, fornendo visibilità su eventi e errori in un ambiente distribuito.
