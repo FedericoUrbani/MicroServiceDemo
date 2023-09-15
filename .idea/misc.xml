@@ -7,6 +7,10 @@
         <option value="$PROJECT_DIR$/demo-config-server/pom.xml" />
         <option value="$PROJECT_DIR$/demo-department-service/pom.xml" />
         <option value="$PROJECT_DIR$/demo-registry-service/pom.xml" />
+        <option value="$PROJECT_DIR$/../../demo-apigateway-service/pom.xml" />
+        <option value="$PROJECT_DIR$/../../demo-user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-apigateway-service/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-user-service/pom.xml" />
       </list>
     </option>
   </component>
