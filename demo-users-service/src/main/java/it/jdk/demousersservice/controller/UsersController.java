@@ -1,7 +1,10 @@
 package it.jdk.demousersservice.controller;
 
+import it.jdk.demousersservice.VO.ResponseTemplateVO;
 import it.jdk.demousersservice.model.Users;
 import it.jdk.demousersservice.repository.UsersRepository;
+import it.jdk.demousersservice.service.UsersService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,35 +19,25 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
+@Slf4j
 public class UsersController {
     private static final Logger LOGGER
             = LoggerFactory.getLogger(UsersController.class);
 
     @Autowired
-    UsersRepository repository;
+    private UsersService service;
 
-    @PostMapping
-    public Users add(@RequestBody Users users) {
-        LOGGER.info("Employee add: {}", users);
-        return repository.add(users);
-    }
-
-    @GetMapping
-    public List<Users> findAll() {
-        LOGGER.info("Employee find");
-        return repository.findAll();
+    @PostMapping("/")
+    public Users saveUser(@RequestBody Users user){
+        log.info("inside saveUser of userController");
+        return service.saveUser(user);
     }
 
     @GetMapping("/{id}")
-    public Users findById(@PathVariable("id") Long id) {
-        LOGGER.info("Employee find: id={}", id);
-        return repository.findById(id);
+    public ResponseTemplateVO getUserWithDepartment(@PathVariable Long id){
+        log.info("inside getUserWithDepartment of userController");
+        return service.getUserWithDepartment(id);
     }
 
-    @GetMapping("/department/{departmentId}")
-    public List<Users> findByDepartment(@PathVariable("departmentId") Long departmentId) {
-        LOGGER.info("Employee find: departmentId={}", departmentId);
-        return repository.findByDepartment(departmentId);
-    }
 
 }
