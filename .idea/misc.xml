@@ -12,6 +12,8 @@
         <option value="$PROJECT_DIR$/demo-apigateway-service/pom.xml" />
         <option value="$PROJECT_DIR$/demo-user-service/pom.xml" />
         <option value="$PROJECT_DIR$/demo-users-service/pom.xml" />
+        <option value="$PROJECT_DIR$/../demo-auth-service/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-auth-service/pom.xml" />
       </list>
     </option>
   </component>

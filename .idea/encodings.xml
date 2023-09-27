@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/demo-apigateway-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-apigateway-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-auth-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-config-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-config-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-department-service/src/main/java" charset="UTF-8" />
@@ -11,6 +12,7 @@
     <file url="file://$PROJECT_DIR$/demo-registry-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-users-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-users-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../demo-auth-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../../demo-apigateway-service/src/main/java" charset="UTF-8" />
   </component>
 </project>

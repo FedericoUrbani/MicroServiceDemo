@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/department")
+@RequestMapping("/api/department")
 @Slf4j
 public class DepartmentController {
 

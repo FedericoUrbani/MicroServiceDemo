@@ -30,7 +30,7 @@ public class UsersService {
         ResponseTemplateVO vo = new ResponseTemplateVO();
         Users user = repository.findById(userId).orElseThrow();
         Department department=
-                restTemplate.getForObject("http://localhost:8060/department/"+ user.getDepartmentId(),Department.class);
+                restTemplate.getForObject("http://localhost:8060/api/department/"+ user.getDepartmentId(),Department.class);
 
         vo.setDepartment(department);
         vo.setUser(user);
